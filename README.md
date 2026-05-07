@@ -2,6 +2,8 @@
 
 ## XSLT with Saxon
 
+Dockerfile
+
 ```text
 FROM eclipse-temurin:17-jre
 
@@ -12,12 +14,31 @@ COPY lib /app/lib
 COPY src /app/src  
 ```
 
+Create Docker image
+
 ```bash
 docker build -t saxon-toolbox .
 ```
+
+Create container and open bash shell in one action.
+
 ```bash
 docker run -it --rm -v "$(pwd)/output:/app/output" saxon-toolbox bash
 ```
+
+Create container then open bash shell in separate actions.
+
+```bash
+docker run -d --name saxon-dev -v "$(pwd)/output:/app/output" saxon-toolbox tail -f /dev/null
+```
+```bash
+docker exec -it saxon-dev bash
+```
+
+---
+
+Examine the XML source code and the output folder prior to running the Saxon transformation.
+
 ```bash
 pwd
 ```
@@ -104,9 +125,20 @@ div.film {
     margin: 0 0 1em 0;
 }
 ```
+
+---
+
+Run Saxon tranformation of XML to HTML utilizing the XSLT file.
+
 ```bash
 java -jar Saxon-HE-12.9.jar -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
 ```
+ or
+ 
+```bash
+java -cp "Saxon-HE-12.9.jar:lib/*" net.sf.saxon.Transform -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
+```
+
 ```bash
 ls -lah output
 ```
@@ -142,26 +174,3 @@ head -18 output/films.html
 ```
 
 > <https://mikecurtis1.github.io/xml-films/output/films.html>
-
----
-
-```bash
-docker build -t saxon-toolbox .
-```
-```bash
-docker run -d --name saxon-dev -v "$(pwd)/output:/app/output" saxon-toolbox tail -f /dev/null
-```
-```bash
-docker exec -it saxon-dev bash
-```
-```bash
-java -jar Saxon-HE-12.9.jar -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
-```
- 
- or
- 
-```bash
-java -cp "Saxon-HE-12.9.jar:lib/*" net.sf.saxon.Transform -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
-```
-
-
