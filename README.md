@@ -206,7 +206,7 @@ div.film {
 
 ---
 
-## Run Saxon tranformation of XML to HTML utilizing the XSLT file.
+## Run Saxon transformation of XML to HTML utilizing the XSLT file.
 
 The transformation itself is performed by invoking the Saxon processor through the Java runtime. The `-s` parameter identifies the XML source document, `-xsl` specifies the XSLT stylesheet, and `-o` defines the generated HTML output artifact.
 
