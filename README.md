@@ -135,11 +135,12 @@ Run Saxon tranformation of XML to HTML utilizing the XSLT file.
 ```bash
 java -jar Saxon-HE-12.9.jar -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
 ```
- or
- 
-```bash
-java -cp "Saxon-HE-12.9.jar:lib/*" net.sf.saxon.Transform -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
-```
+
+> Or run Saxon with options to explicitly indicate library dependencies
+>
+> ```bash
+> java -cp "Saxon-HE-12.9.jar:lib/*" net.sf.saxon.Transform -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
+> ```
 
 ```bash
 ls -lah output
