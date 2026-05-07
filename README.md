@@ -28,9 +28,9 @@ The Saxon integration was intentionally kept lightweight and local to the projec
 
 Although experienced Java developers may already be familiar with external JAR dependency management and classpath configuration, the setup process is documented here because XML/XSLT transformation workflows have become relatively uncommon in contemporary front-end development. The intent of this repository is therefore not only to preserve the transformation pipeline itself, but also to document the surrounding tooling and execution model required to reproduce the transformation process using current software environments.
 
-### Docker setup
+## Docker setup
 
-#### Dockerfile content
+### Dockerfile content
 
 ```text
 FROM eclipse-temurin:17-jre
@@ -42,13 +42,13 @@ COPY lib /app/lib
 COPY src /app/src  
 ```
 
-#### Create Docker image
+### Create Docker image
 
 ```bash
 docker build -t saxon-toolbox .
 ```
 
-#### Create container and open bash shell in one action.
+### Create container and open bash shell in one action.
 
 ```bash
 docker run -it --rm -v "$(pwd)/output:/app/output" saxon-toolbox bash
@@ -67,14 +67,8 @@ docker run -it --rm -v "$(pwd)/output:/app/output" saxon-toolbox bash
 
 ---
 
-### Examine the XML source code and the output folder prior to running the Saxon transformation.
+## Examine the XML source code and the output folder prior to running the Saxon transformation.
 
-```bash
-pwd
-```
-```bash
-ls -lah
-```
 ```bash
 ls -lah src 
 ```
@@ -158,7 +152,7 @@ div.film {
 
 ---
 
-### Run Saxon tranformation of XML to HTML utilizing the XSLT file.
+## Run Saxon tranformation of XML to HTML utilizing the XSLT file.
 
 ```bash
 java -jar Saxon-HE-12.9.jar -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
