@@ -26,7 +26,7 @@ Modern browser support for native XSLT processing has gradually been deprecated,
 
 To replace the deprecated browser-native XSLT workflow, the project now uses [Saxon HE](https://www.saxonica.com/download/java.xml) as an explicit XSLT transformation engine. Saxon is a Java-based XSLT and XPath processor capable of transforming XML documents into HTML, XML, text, and other output formats. In this project, Saxon processes `src/films.xml` together with `src/films.xsl` and generates a persistent HTML artifact in `output/films.html`.
 
-The Saxon integration was intentionally kept lightweight and local to the project rather than installed globally into the development environment. After downloading the Saxon HE distribution archive, the primary `Saxon-HE-12.9.jar` file together with the supporting `lib/` dependency directory were copied into the local project directory structure. These runtime dependencies are required for the Java execution environment but are not considered part of the project source itself, so both the Saxon JAR file and the accompanying `lib/` directory were excluded from version control using `.gitignore`.
+The Saxon integration was intentionally kept lightweight and local to the project rather than installed globally into the development environment. After downloading the Saxon HE distribution archive, the primary `saxon-he-12.9.jar` file together with the supporting `lib/` dependency directory were copied into the local project directory structure. These runtime dependencies are required for the Java execution environment but are not considered part of the project source itself, so both the Saxon JAR file and the accompanying `lib/` directory were excluded from version control using `.gitignore`.
 
 Although experienced Java developers may already be familiar with external JAR dependency management and classpath configuration, the setup process is documented here because XML/XSLT transformation workflows have become relatively uncommon in contemporary front-end development. The intent of this repository is therefore not only to preserve the transformation pipeline itself, but also to document the surrounding tooling and execution model required to reproduce the transformation process using current software environments.
 
@@ -167,13 +167,13 @@ div.film {
 The transformation itself is performed by invoking the Saxon processor through the Java runtime. The `-s` parameter identifies the XML source document, `-xsl` specifies the XSLT stylesheet, and `-o` defines the generated HTML output artifact.
 
 ```bash
-java -jar Saxon-HE-12.9.jar -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
+java -jar saxon-he-12.9.jar -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
 ```
 
 > Or run Saxon with options to explicitly indicate library dependencies
 >
 > ```bash
-> java -cp "Saxon-HE-12.9.jar:lib/*" net.sf.saxon.Transform -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
+> java -cp "saxon-he-12.9.jar:lib/*" net.sf.saxon.Transform -s:src/films.xml -xsl:src/films.xsl -o:output/films.html
 > ```
 
 ### Examine output
