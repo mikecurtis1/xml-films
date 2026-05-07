@@ -22,7 +22,7 @@ Modern browser support for native XSLT processing has gradually been deprecated,
 
 ## Replacing browser-based XML transformation with Saxon
 
-To replace the deprecated browser-native XSLT workflow, the project now uses (Saxon HE)[https://www.saxonica.com/download/java.xml] as an explicit XSLT transformation engine. Saxon is a Java-based XSLT and XPath processor capable of transforming XML documents into HTML, XML, text, and other output formats. In this project, Saxon processes `src/films.xml` together with `src/films.xsl` and generates a persistent HTML artifact in `output/films.html`.
+To replace the deprecated browser-native XSLT workflow, the project now uses [Saxon HE](https://www.saxonica.com/download/java.xml) as an explicit XSLT transformation engine. Saxon is a Java-based XSLT and XPath processor capable of transforming XML documents into HTML, XML, text, and other output formats. In this project, Saxon processes `src/films.xml` together with `src/films.xsl` and generates a persistent HTML artifact in `output/films.html`.
 
 The Saxon integration was intentionally kept lightweight and local to the project rather than installed globally into the development environment. After downloading the Saxon HE distribution archive, the primary `Saxon-HE-12.9.jar` file together with the supporting `lib/` dependency directory were copied into the local project directory structure. These runtime dependencies are required for the Java execution environment but are not considered part of the project source itself, so both the Saxon JAR file and the accompanying `lib/` directory were excluded from version control using `.gitignore`.
 
