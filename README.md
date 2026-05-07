@@ -34,7 +34,7 @@ Although experienced Java developers may already be familiar with external JAR d
 
 ## Docker setup
 
-The transformation workflow is executed within a lightweight Docker container using the Eclipse Temurin Java runtime image. Containerization was chosen primarily to avoid introducing Java and Saxon dependencies directly into the host WSL development environment while still preserving a reproducible execution context for the transformation pipeline.
+The transformation workflow is executed within a lightweight Docker container using the Eclipse Temurin Java runtime image. Containerization was chosen primarily to isolate the transformation toolchain from the host environment while preserving reproducibility.
 
 The container mounts the local `output/` directory from the host filesystem so that generated HTML artifacts persist outside the container lifecycle and remain available for static publishing through GitHub Pages.
 
