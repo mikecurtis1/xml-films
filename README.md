@@ -32,6 +32,24 @@ Although experienced Java developers may already be familiar with external JAR d
 
 ---
 
+## Project workflow
+
+```text
+XML (films.xml)
+   +
+XSLT (films.xsl)
+   +
+DTD (films.dtd)
+        ↓
+   Saxon Processor
+        ↓
+   HTML Output (films.html)
+        ↓
+   CSS Styling (films.css)
+        ↓
+   GitHub Pages
+```
+
 ## Docker setup
 
 The transformation workflow is executed within a lightweight Docker container using the Eclipse Temurin Java runtime image. Containerization was chosen primarily to isolate the transformation toolchain from the host environment while preserving reproducibility.
