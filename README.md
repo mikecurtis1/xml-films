@@ -1,5 +1,25 @@
 # XML Transformation
 
+## Background
+
+This project began as a small XML/XSLT demonstration intended to explore structured XML data transformation into styled HTML presentation. The sample dataset models a film collection containing titles, personnel, awards, locations, languages, and related metadata. The primary purpose of the project was to experiment with XSLT templating, XPath navigation, and the separation between structured source data and rendered presentation output.
+
+The original implementation relied on browser-native XML processing instructions and DTD-based document structure definitions. Within the XML source file, the processing instruction:
+
+```xml
+<?xml-stylesheet type="text/xsl" href="films.xsl"?>
+```
+
+directed the browser to dynamically apply the XSLT transformation at render time, while the document type declaration:
+
+```xml
+<!DOCTYPE film_collection SYSTEM "films.dtd">
+```
+
+associated the XML document with an external DTD defining the permitted document structure and attribute constraints. The XSLT transformation generated HTML structure and hyperlinks dynamically, while CSS styling was applied separately through standard stylesheet references embedded in the transformed HTML output.
+
+Modern browser support for native XSLT processing has gradually been deprecated, making the original browser-based transformation workflow unreliable as a long-term demonstration method. In the original design, the HTML output existed only as a dynamically generated browser DOM structure rather than as a persistent HTML artifact stored on disk. To preserve the transformation workflow while producing reproducible static output, the project was revised to use Saxon HE as an explicit XSLT transformation engine executed within a Docker container. The revised pipeline generates a persistent HTML file suitable for static hosting through GitHub Pages.
+
 ## XSLT with Saxon
 
 ### Docker setup
