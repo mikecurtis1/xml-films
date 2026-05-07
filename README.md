@@ -319,3 +319,14 @@ drwxr-xr-x 6 mikecurtis1 mikecurtis1 4.0K May  7 12:21 ..
 #### View HTML transformation in browser.
 
 > <https://mikecurtis1.github.io/xml-films/output/films.html>
+
+---
+
+### Summary 
+
+This project demonstrates an end-to-end XML transformation pipeline that converts structured film data into styled HTML using XSLT. It began as a browser-based XML/XSLT experiment using native processing instructions and DTD validation, but has been modernized into a reproducible, containerized workflow using Saxon HE.
+
+The revised implementation replaces deprecated browser-side XSLT processing with an explicit transformation step executed in a Dockerized Java environment. This produces a persistent HTML artifact suitable for static hosting, while preserving the original design intent of separating structured data (XML), transformation logic (XSLT), and presentation (CSS).
+
+The project is primarily educational and archival in nature, documenting both the legacy browser-based transformation model and a modern equivalent execution pipeline. It is intended to illustrate how XML/XSLT workflows can be adapted to current tooling rather than serving as a production system.
+
