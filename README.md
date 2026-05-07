@@ -30,7 +30,7 @@ ls -lah src
 ```bash
 head src/films.xml
 ```
-```text
+```xml
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="films.xsl"?>
 <!DOCTYPE film_collection SYSTEM "films.dtd">
@@ -45,7 +45,7 @@ head src/films.xml
 ```bash
 head -21 src/films.xsl
 ```
-```text
+```xsl
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
@@ -74,7 +74,7 @@ ls -lah output
 ```bash
 head -28 output/films.css
 ```
-```text
+```css
 body {
     font-family:"Lato", Helvetica,sans-serif;
     background-color:#493C35;
@@ -120,7 +120,7 @@ drwxr-xr-x 1 root   root   4.0K May  5 21:47 ..
 ```bash
 head -18 output/films.html
 ```
-```text
+```html
 <!DOCTYPE HTML>
 <html>
    <head>
