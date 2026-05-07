@@ -80,6 +80,45 @@ docker run -it --rm -v "$(pwd)/output:/app/output" saxon-toolbox bash
 Once the container is running, the XML source files, XSLT transformation logic, and output directories can be inspected directly within the isolated runtime environment. The following commands demonstrate the project structure prior to executing the Saxon transformation process.
 
 ```bash
+hostname
+```
+```text
+LAPTOP
+```
+```bash
+ls -lah
+```
+```text
+total 5.6M
+drwxr-xr-x  6 mikecurtis1 mikecurtis1 4.0K May  7 12:21 .
+drwxr-x--- 17 mikecurtis1 mikecurtis1 4.0K May  7 12:24 ..
+drwxr-xr-x  8 mikecurtis1 mikecurtis1 4.0K May  7 12:24 .git
+-rw-r--r--  1 mikecurtis1 mikecurtis1   40 May  7 12:20 .gitignore
+-rw-r--r--  1 mikecurtis1 mikecurtis1  111 May  7 12:20 Dockerfile
+-rw-r--r--  1 mikecurtis1 mikecurtis1 8.6K May  7 12:23 README.md
+drwxr-xr-x  2 mikecurtis1 mikecurtis1 4.0K May  7 12:21 lib
+drwxr-xr-x  2 mikecurtis1 mikecurtis1 4.0K May  7 11:53 output
+-rw-r--r--  1 mikecurtis1 mikecurtis1 5.6M Sep 12  2025 saxon-he-12.9.jar
+drwxr-xr-x  2 mikecurtis1 mikecurtis1 4.0K May  5 19:42 src
+```
+```bash
+cat .gitignore
+```
+```text
+Saxon-HE-12.9.jar
+saxon-he-12.9.jar
+lib/
+```
+```bash
+ls -lah output
+```
+```text
+total 12K
+drwxr-xr-x 2 mikecurtis1 mikecurtis1 4.0K May  7 11:53 .
+drwxr-xr-x 6 mikecurtis1 mikecurtis1 4.0K May  7 12:21 ..
+-rw-r--r-- 1 mikecurtis1 mikecurtis1 1.4K May  5 19:29 films.css
+```
+```bash
 ls -lah src 
 ```
 ```bash
