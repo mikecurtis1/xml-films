@@ -222,7 +222,7 @@ java -jar saxon-he-12.9.jar -s:src/films.xml -xsl:src/films.xsl -o:output/films.
 
 ### Examine output
 
-Notice that without our container environment (hostname `daf877f94c93`) the `output/` directory has ownership `ubuntu` indicating the container's host system. This host system directory is available from within the container through the mount option `"$(pwd)/output:/app/output"` in our Docker `run` command used above. This provides persistent storage for the output file after the Docker container shuts down.
+Notice that within the container environment (hostname `daf877f94c93`) the `output/` directory reflects host filesystem ownership (`ubuntu`) due to the Docker bind mount (`"$(pwd)/output:/app/output"`), which shares the directory between host and container.
 
 ```bash
 hostname
