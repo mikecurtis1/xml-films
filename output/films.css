@@ -41,7 +41,7 @@ div.section div.heading {
 
 div.title {
     border-radius: 0.5em;
-    background-color:#09212e;
+    background-color:#22323b;
     color:#a9c6cf;
     /*border: solid 0.2em #B3A580;*/
     border:0;
@@ -53,11 +53,11 @@ div.title {
 div.original_title {
     font-size:1.5em;
     font-weight:normal;
-    color:#a9c6cf;
+    color:#eaeaca;
 }
 
 div.original_title a {
-    color:#a9c6cf;
+    color:#eaeaca;
 }
 
 a, a:visited {
