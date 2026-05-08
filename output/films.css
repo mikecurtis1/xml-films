@@ -21,7 +21,7 @@ div.film {
     border-radius: 1em 1em 0 0;
     border-bottom: 0.5em dotted #eaeaca;
     background-color:#a9c6cf;
-    color:#524032;
+    color:#09212e;
     padding:1.25em 2em 1em 2em;
     margin: 0 0 1em 0;
 }
@@ -41,7 +41,7 @@ div.section div.heading {
 
 div.title {
     border-radius: 0.5em;
-    background-color:#694F40;
+    background-color:#09212e;
     color:#a9c6cf;
     /*border: solid 0.2em #B3A580;*/
     border:0;
