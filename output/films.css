@@ -42,7 +42,7 @@ div.section div.heading {
 div.title {
     border-radius: 0.5em;
     background-color:#22323b;
-    color:#a9c6cf;
+    color:#eaeaca;
     /*border: solid 0.2em #B3A580;*/
     border:0;
     padding:14px;
@@ -61,7 +61,7 @@ div.original_title a {
 }
 
 a, a:visited {
-    color:#331;
+    color:#411;
 }
 
 div.date_entered {
