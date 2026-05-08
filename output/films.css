@@ -19,7 +19,7 @@ body {
 
 div.film {
     border-radius: 1em 1em 0 0;
-    border-bottom: 0.5em dotted #eaeaca;
+    border-bottom: 0.33em dotted #eaeaca;
     /* https://cssgradient.io/ */
     background: #e1eaeb;
     background: linear-gradient(90deg,rgba(225, 234, 235, 1) 0%, rgba(137, 176, 196, 1) 100%);
@@ -38,7 +38,7 @@ div.section {
 div.section div.heading {
     /*text-decoration:underline;*/
     font-weight:bold;
-    color:#09212e;
+    color:#3a5a6b;
 }
 
 div.title {
@@ -64,7 +64,7 @@ div.original_title a {
 }
 
 a, a:visited {
-    color:#511;
+    color:#06b;
 }
 
 div.date_entered {
