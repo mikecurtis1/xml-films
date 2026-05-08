@@ -14,13 +14,14 @@ body {
     max-width:34em;
     margin-left:auto;
     margin-right:auto;
-    padding:0 1em 0 1em;
+    padding:0 0.25em 0 0.25em;
 }
 
 div.film {
     border-radius: 1em 1em 0 0;
     border-bottom: 0.5em dotted #eaeaca;
-    background-color:#a9c6cf;
+    /*background-color:#a9c6cf;*/
+    background: linear-gradient(45deg, #dae7eb 0%, #a9c6cf 100%);
     color:#09212e;
     padding:1.25em 2em 1em 2em;
     margin: 0 0 1em 0;
