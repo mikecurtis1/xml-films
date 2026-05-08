@@ -10,6 +10,7 @@ html {
 
 body {
     font-family:"Lato", Helvetica,sans-serif;
+    /* https://www.google.com/search?q=css+color+picker */
     background-color:#0b354d;
     max-width:34em;
     margin-left:auto;
@@ -43,8 +44,8 @@ div.section div.heading {
 
 div.title {
     border-radius: 0.5em;
-    /*background-color:#22323b;*/
-    background: linear-gradient(45deg, #677b87 0%, #22323b 100%);
+    background: #677B87;
+    background: linear-gradient(90deg, rgba(103, 123, 135, 1) 0%, rgba(34, 50, 59, 1) 100%);
     color:#eaeaca;
     /*border: solid 0.2em #B3A580;*/
     border:0;
